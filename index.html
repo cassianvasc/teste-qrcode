@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulação Educativa</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: black;
+      color: red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #container {
+      max-width: 600px;
+    }
+    #warning {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    #countdown {
+      font-size: 40px;
+      margin-top: 20px;
+    }
+    #reveal {
+      display: none;
+      color: #0f0;
+      margin-top: 30px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="container">
+    <div id="warning">
+      VOCÊ FOI HACKEADO<br>
+      SEUS DADOS SERÃO VAZADOS EM
+    </div>
+
+    <div id="countdown">5</div>
+
+    <div id="reveal">
+      ⚠️ SIMULAÇÃO EDUCACIONAL ⚠️<br><br>
+      Nenhum dado foi acessado.<br>
+      Simples assim voce poderia ter sido vitima de um ataque cibernetico<br>
+      
+    </div>
+  </div>
+
+  <script>
+    let time = 5;
+    const countdown = document.getElementById("countdown");
+    const reveal = document.getElementById("reveal");
+    const warning = document.getElementById("warning");
+
+    const timer = setInterval(() => {
+      time--;
+      countdown.textContent = time;
+
+      if (time === 0) {
+        clearInterval(timer);
+        countdown.style.display = "none";
+        warning.style.display = "none";
+        reveal.style.display = "block";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
